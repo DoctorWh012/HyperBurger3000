@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 if (holdingItem) return;
-                grabbableObject = rayHit.collider.GetComponent<GrabbableObject>();
+                grabbableObject = rayHit.collider.GetComponentInParent<GrabbableObject>();
                 grabbableObject.Grab(grabbedObjTarget);
                 holdingItem = true;
             }
@@ -42,11 +42,11 @@ public class PlayerInteraction : MonoBehaviour
                 UIManager.Instance.uiBottomMessage.SetText("");
             }
         }
-        
+
         if (!holdingItem) return;
         if (Input.GetMouseButtonUp(0))
         {
-            grabbableObject.Release();
+            if (grabbableObject != null) grabbableObject.Release();
             holdingItem = false;
             grabbableObject = null;
         }

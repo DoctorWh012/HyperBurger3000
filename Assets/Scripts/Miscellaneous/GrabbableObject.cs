@@ -4,13 +4,13 @@ using UnityEngine;
 public class GrabbableObject : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private Rigidbody rb;
+    [SerializeField] public Rigidbody rb;
 
     [HideInInspector] public Transform target;
     private bool grabbed = false;
     private float moveSpeed = 8;
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!grabbed) return;
         rb.position = Vector3.Lerp(rb.position, target.position, Time.deltaTime * moveSpeed);

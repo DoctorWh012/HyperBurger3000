@@ -19,5 +19,5 @@ public class ScriptableHamburgers : ScriptableObject
 {
     [Header("Hamburger")]
     public string hamburgerName;
-    public Ingredients[] hamburgerRecipe = new Ingredients[4];
+    public Ingredients[] hamburgerRecipe = new Ingredients[5];
 }
