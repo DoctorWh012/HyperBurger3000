@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d28782a79ee0f438e9f06cba292b86, type: 3}
-  m_Name: XRatao
+  m_Name: MrRecharge
   m_EditorClassIdentifier: 
-  hamburgerName: X-RATAO
-  hamburgerRecipe: 0000000006000000050000000300000007000000
+  hamburgerName: MR-Recharge
+  hamburgerRecipe: 0700000003000000050000000500000000000000
