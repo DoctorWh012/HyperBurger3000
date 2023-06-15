@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 1418019108678408035}
   - component: {fileID: 318706073493939904}
   - component: {fileID: 318706073493939905}
-  - component: {fileID: 318706073493939932}
-  - component: {fileID: 318706073493939907}
   - component: {fileID: 822143457}
+  - component: {fileID: 318706073493939907}
   - component: {fileID: 822143454}
+  - component: {fileID: 318706073493939932}
+  - component: {fileID: 5621826108430585225}
   m_Layer: 6
   m_Name: What
   m_TagString: Ingredient
@@ -147,6 +148,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5658242, y: 0.05028042, z: 0.5658242}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &822143457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625205049107265206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5658242, y: 0.25338152, z: 0.5658242}
+  m_Center: {x: 0, y: 0.10155058, z: 0}
+--- !u!114 &318706073493939907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625205049107265206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6a1b86bc03f7b4bb5a36656e0df993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 318706073493939904}
+  target: {fileID: 0}
+--- !u!114 &822143454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625205049107265206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbc33e85904907459f3bb22117bab22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 318706073493939904}
+  ingredient: 5
+  grabbableObject: {fileID: 318706073493939907}
+  triggerCol: {fileID: 822143457}
+  col: {fileID: 318706073493939905}
+  stackingPoint: {fileID: 1955479473}
 --- !u!82 &318706073493939932
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,7 +289,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &318706073493939907
+--- !u!114 &5621826108430585225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,38 +298,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 625205049107265206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6a1b86bc03f7b4bb5a36656e0df993, type: 3}
+  m_Script: {fileID: 11500000, guid: 3134c0a4f4a40c249a6dae39119ae91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 318706073493939904}
-  target: {fileID: 0}
---- !u!65 &822143457
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625205049107265206}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5658242, y: 0.25338152, z: 0.5658242}
-  m_Center: {x: 0, y: 0.10155058, z: 0}
---- !u!114 &822143454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625205049107265206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbc33e85904907459f3bb22117bab22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 318706073493939904}
-  grabbableObject: {fileID: 318706073493939907}
-  triggerCol: {fileID: 822143457}
-  col: {fileID: 318706073493939905}
-  stackingPoint: {fileID: 1955479473}
+  meshRenderer: {fileID: 1418019108678408035}
+  foodState: 1
+  cookedTime: 0
+  cookedMat: {fileID: 2100000, guid: 5b1a9d891b9414448aee64f042177b2b, type: 2}
+  burntTime: 1
+  burntMat: {fileID: 2100000, guid: 446d417b3ca9f7e4c92da18ff95f6d48, type: 2}
+  cookTime: 0

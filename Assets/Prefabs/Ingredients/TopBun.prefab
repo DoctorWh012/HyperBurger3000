@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 2655758170438780145}
   - component: {fileID: 3682449561802573288}
   - component: {fileID: 3682449561802573291}
-  - component: {fileID: 3682449561802573289}
   - component: {fileID: 1298466857}
+  - component: {fileID: 3682449561802573289}
   - component: {fileID: 1298466856}
+  - component: {fileID: 204938794127013951}
   m_Layer: 6
   m_Name: TopBun
   m_TagString: Ingredient
@@ -146,6 +147,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8057168, y: 0.27475533, z: 0.8057168}
   m_Center: {x: 0, y: 0.0056372285, z: 0}
+--- !u!65 &1298466857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4601510639623988516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8057168, y: 0.5420121, z: 0.8057168}
+  m_Center: {x: 0, y: 0.1392656, z: 0}
 --- !u!114 &3682449561802573289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,19 +174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3682449561802573288}
   target: {fileID: 0}
---- !u!65 &1298466857
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4601510639623988516}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8057168, y: 0.5420121, z: 0.8057168}
-  m_Center: {x: 0, y: 0.1392656, z: 0}
 --- !u!114 &1298466856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,3 +191,22 @@ MonoBehaviour:
   triggerCol: {fileID: 1298466857}
   col: {fileID: 3682449561802573291}
   stackingPoint: {fileID: 812775583}
+--- !u!114 &204938794127013951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4601510639623988516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3134c0a4f4a40c249a6dae39119ae91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 2655758170438780145}
+  foodState: 1
+  cookedTime: 0
+  cookedMat: {fileID: 2100000, guid: ff6f62cfdbd5bc14a8b0ccb45eabe749, type: 2}
+  burntTime: 5
+  burntMat: {fileID: 2100000, guid: 3ea6c0a3cbd286a4fbb6e5eb6c9bfe13, type: 2}
+  cookTime: 0

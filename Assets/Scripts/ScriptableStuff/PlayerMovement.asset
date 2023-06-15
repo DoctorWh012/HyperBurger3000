@@ -15,7 +15,7 @@ MonoBehaviour:
   moveSpeed: 13
   crouchedSpeedMultiplier: 1.2
   groundDrag: 9
-  airDrag: 0
+  airDrag: 1
   jumpForce: 8
   maxSlopeAngle: 45
   gravity: 10
