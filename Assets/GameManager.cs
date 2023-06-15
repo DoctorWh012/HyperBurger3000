@@ -9,19 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScriptableHamburgers[] hamburgers;
 
     [Header("Settings")]
-    [SerializeField] float correctDeliveryScoreIncrease;
-    [SerializeField] float wrongDeliveryScoreDecrease;
+    [SerializeField] int correctDeliveryScoreIncrease;
+    [SerializeField] int wrongDeliveryScoreDecrease;
 
     private int hamburgersDone;
-    private float score
-    {
-        get { return score; }
-        set
-        {
-            score = value;
-
-        }
-    }
+    private int score;
 
     private void Awake()
     {
@@ -44,12 +36,15 @@ public class GameManager : MonoBehaviour
     public void DeliveredCorrect()
     {
         hamburgersDone++;
+        score += correctDeliveryScoreIncrease;
         TVDisplay.Instance.preparedQntTxt.SetText(hamburgersDone.ToString());
+        TVDisplay.Instance.scoreValTxt.SetText(score.ToString());
         GetNewRecipe();
     }
 
     public void DeliveredWrong()
     {
-
+        score -= wrongDeliveryScoreDecrease;
+        TVDisplay.Instance.scoreValTxt.SetText(score.ToString());
     }
 }

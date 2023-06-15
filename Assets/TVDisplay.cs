@@ -12,6 +12,7 @@ public class TVDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] ingredientsNames;
     [SerializeField] private Image[] ingredientsIcons;
     [SerializeField] public TextMeshProUGUI preparedQntTxt;
+    [SerializeField] public TextMeshProUGUI scoreValTxt;
 
     [Header("Sprites")]
     [SerializeField] private Sprite topBunImg;

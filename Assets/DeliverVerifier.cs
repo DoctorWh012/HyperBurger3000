@@ -7,12 +7,14 @@ public class DeliverVerifier : MonoBehaviour
     [SerializeField] private ParticleSystem wrongDeliverParticles;
 
     public Ingredients[] requestedRecipe;
+    private GameObject deliveredPlate;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Plate")) return;
         Plate plate = other.GetComponent<Plate>();
-
+        deliveredPlate = other.gameObject;
         if (plate.stackedIngredientsQnt != requestedRecipe.Length)
         {
             FailRecipeDeliver();
@@ -35,6 +37,7 @@ public class DeliverVerifier : MonoBehaviour
         print("WrongRecipe");
         wrongDeliverParticles.Play();
         GameManager.Instance.DeliveredWrong();
+        deliveredPlate = null;
     }
 
     private void AcceptRecipeDeliver()
@@ -42,5 +45,6 @@ public class DeliverVerifier : MonoBehaviour
         print("CorrectRecipe");
         correctDeliverParticles.Play();
         GameManager.Instance.DeliveredCorrect();
+        Destroy(deliveredPlate);
     }
 }
