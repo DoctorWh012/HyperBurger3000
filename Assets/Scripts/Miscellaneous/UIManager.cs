@@ -65,5 +65,7 @@ public class UIManager : MonoBehaviour
     {
         foodInatorUI.SetActive(false);
         endGameUi.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

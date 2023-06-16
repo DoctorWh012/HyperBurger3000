@@ -17,7 +17,7 @@ public class PlateSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (!playerOnTrigger) return;
+        if (!playerOnTrigger || !GameManager.Instance.gameOngoing) return;
         if (Input.GetKeyDown(KeyCode.E) && ableToSpawn) OrderPlate();
     }
 

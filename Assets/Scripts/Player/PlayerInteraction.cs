@@ -17,6 +17,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
+        if (RigidBodyPlayerMovement.Instance.movementFreeze) return;
         if (Physics.Raycast(cam.position, cam.forward, out rayHit, interactionDistance, grabbableObjectLayer))
         {
             if (!lookingAtGrabbable)
