@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
     {
         gameOngoing = false;
         UIManager.Instance.ActivateEndGameUi();
+        UIManager.Instance.endingPlatesDone.SetText(hamburgersDone.ToString());
+        UIManager.Instance.endingScore.SetText(score.ToString());
         RigidBodyPlayerMovement.Instance.FreezePlayerMovement(true);
     }
 
