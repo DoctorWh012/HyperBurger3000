@@ -5,6 +5,9 @@ public class DeliverVerifier : MonoBehaviour
     [Header("Components")]
     [SerializeField] private ParticleSystem correctDeliverParticles;
     [SerializeField] private ParticleSystem wrongDeliverParticles;
+    [SerializeField] private AudioClip correctDeliverySFX;
+    [SerializeField] private AudioClip wrongDeliverySfx;
+    [SerializeField] private AudioSource audioSource;
 
     public Ingredients[] requestedRecipe;
     private GameObject deliveredPlate;
@@ -36,6 +39,7 @@ public class DeliverVerifier : MonoBehaviour
     {
         print("WrongRecipe");
         wrongDeliverParticles.Play();
+        audioSource.PlayOneShot(wrongDeliverySfx);
         GameManager.Instance.DeliveredWrong();
         deliveredPlate = null;
     }
@@ -44,6 +48,7 @@ public class DeliverVerifier : MonoBehaviour
     {
         print("CorrectRecipe");
         correctDeliverParticles.Play();
+        audioSource.PlayOneShot(correctDeliverySFX);
         GameManager.Instance.DeliveredCorrect();
         Destroy(deliveredPlate);
     }

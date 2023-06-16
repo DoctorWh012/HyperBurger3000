@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private GameObject foodInatorUI;
+    [SerializeField] private GameObject endGameUi;
     [SerializeField] private GameObject crosshair;
     [SerializeField] public TextMeshProUGUI uiBottomMessage;
     [SerializeField] private Button[] orderButtons;
@@ -40,12 +42,28 @@ public class UIManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
-    
+
     public void DisableEnableOrderButtons(bool state)
     {
         for (int i = 0; i < orderButtons.Length; i++)
         {
             orderButtons[i].enabled = state;
         }
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ActivateEndGameUi()
+    {
+        foodInatorUI.SetActive(false);
+        endGameUi.SetActive(true);
     }
 }
