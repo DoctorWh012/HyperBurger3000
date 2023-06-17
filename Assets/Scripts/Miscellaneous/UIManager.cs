@@ -30,7 +30,8 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            EnableDisableSettingsMenu();
+            if (foodInatorUIActive) EnableDisableFoodInatorUI(false);
+            else EnableDisableSettingsMenu();
         }
 
     }

@@ -326,7 +326,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   grabbedObjTarget: {fileID: 6616394388183666531}
-  interactionDistance: 3
+  interactionDistance: 4.5
 --- !u!1 &6356696959906453396
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +374,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 6356696960311780228}
   mainCamera: {fileID: 6356696959446426172}
-  sensitivity: 2
 --- !u!114 &6356696959906453402
 MonoBehaviour:
   m_ObjectHideFlags: 0

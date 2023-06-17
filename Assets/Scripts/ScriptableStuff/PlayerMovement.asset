@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a70d2db6292064284f2e230288bb9b, type: 3}
   m_Name: PlayerMovement
   m_EditorClassIdentifier: 
-  moveSpeed: 13
+  moveSpeed: 17
   crouchedSpeedMultiplier: 1.2
   groundDrag: 9
   airDrag: 1

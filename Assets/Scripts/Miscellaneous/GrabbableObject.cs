@@ -6,9 +6,17 @@ public class GrabbableObject : MonoBehaviour
     [Header("Components")]
     [SerializeField] public Rigidbody rb;
 
+    [Header("Settings")]
+    [SerializeField] private float maxImpulse;
+
     [HideInInspector] public Transform target;
     private bool grabbed = false;
     private float moveSpeed = 8;
+
+    private void Start()
+    {
+        rb.AddForce(Random.Range(0, maxImpulse), Random.Range(0, maxImpulse), Random.Range(0, maxImpulse), ForceMode.Impulse);
+    }
 
     private void Update()
     {

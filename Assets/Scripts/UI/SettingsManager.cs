@@ -118,7 +118,7 @@ public class SettingsManager : MonoBehaviour
         playerPrefs.resWidth = Screen.currentResolution.width;
         playerPrefs.sensitivity = 20;
         playerPrefs.mainVolume = 1;
-        playerPrefs.musicVolume = 1;
+        playerPrefs.musicVolume = 0.5f;
         playerPrefs.fullScreen = fullScreenToggle.isOn;
         playerPrefs.vSync = vSyncToggle.isOn;
 

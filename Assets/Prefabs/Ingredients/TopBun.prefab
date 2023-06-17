@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3682449561802573288}
+  maxImpulse: 3
   target: {fileID: 0}
 --- !u!114 &1298466856
 MonoBehaviour:
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3682449561802573288}
+  ingredient: 0
   grabbableObject: {fileID: 3682449561802573289}
   triggerCol: {fileID: 1298466857}
   col: {fileID: 3682449561802573291}
