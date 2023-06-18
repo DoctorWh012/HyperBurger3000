@@ -35,6 +35,7 @@ public class Stackable : MonoBehaviour
 
 
         // Disabling rb
+        ingredient.grabbableObject.lineRenderer.enabled = false;
         Destroy(ingredient.grabbableObject);
         Destroy(ingredient.rb);
 

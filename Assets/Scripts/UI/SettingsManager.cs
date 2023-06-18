@@ -11,7 +11,7 @@ public class SettingsManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
-    [SerializeField] private Slider sensitivitySlider;
+    [SerializeField] public Slider sensitivitySlider;
     [SerializeField] private TextMeshProUGUI sensitivitySliderText;
 
     [SerializeField] private Slider mainVolumeSlider;
@@ -30,6 +30,8 @@ public class SettingsManager : MonoBehaviour
     private int currentResolutionIndex = 0;
     private int desiredResolutionIndex;
 
+    public bool isBeingCompiledForWeb;
+
     private void Awake()
     {
         Instance = this;
@@ -37,6 +39,7 @@ public class SettingsManager : MonoBehaviour
 
     private void Start()
     {
+        if (isBeingCompiledForWeb) return;
         LoadFromJson();
 
         resolutions = Screen.resolutions;
@@ -128,6 +131,7 @@ public class SettingsManager : MonoBehaviour
 
     public void SaveToJson()
     {
+
         PlayerPreferences playerPrefs = new PlayerPreferences();
 
         Resolution savedRes = GetAndSetResolution(fullScreenToggle.isOn);
@@ -142,10 +146,12 @@ public class SettingsManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(playerPrefs, true);
         File.WriteAllText($"{Application.dataPath}/PlayerPrefs.json", json);
+
     }
 
     public void LoadFromJson()
     {
+
         if (!System.IO.File.Exists($"{Application.dataPath}/PlayerPrefs.json")) CreateJson();
 
         string json = File.ReadAllText($"{Application.dataPath}/PlayerPrefs.json");
@@ -168,6 +174,7 @@ public class SettingsManager : MonoBehaviour
         vSyncToggle.isOn = playerPrefs.vSync;
         if (playerPrefs.vSync) QualitySettings.vSyncCount = 1;
         else QualitySettings.vSyncCount = 0;
+
     }
 }
 

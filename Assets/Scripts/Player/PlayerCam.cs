@@ -33,6 +33,7 @@ public class PlayerCam : MonoBehaviour
 
     public void GetSensitivity()
     {
+        if (SettingsManager.Instance.isBeingCompiledForWeb) { sensitivity = 1f; return; }
         string json = File.ReadAllText($"{Application.dataPath}/PlayerPrefs.json");
         PlayerPreferences playerPrefs = JsonUtility.FromJson<PlayerPreferences>(json);
         sensitivity = playerPrefs.sensitivity / 10;
